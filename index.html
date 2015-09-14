@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>弹窗Template</title>
+	<link rel="stylesheet" href="css/pop-box.css" />
+    <script src="http://www.duowan.com/public/assets/sys/js/jquery.js"></script>
+</head>
+<body>
+	<div class="demo">
+		<button id="box1">弹窗一</button>
+		<button id="box2">弹窗二</button>
+		<button id="box3">弹窗三</button>
+	</div>
+	<!--遮罩层-->
+	<div class="pop-mask" id="popMask"></div>
+	<div class="pop-box" id="box1Template">
+		<div class="pop-box-hd">
+	        <h3>领奖记录</h3>
+	        <div class="act">
+	            <a title="关闭" class="btn-close">×</a>
+	        </div>
+	    </div>
+	    <div class="pop-box-bd">
+	    	this is a pop-box template!!!-----111111
+	    	this is a pop-box template!!!-----111111
+	    </div>
+	</div>
+
+	<div class="pop-box" id="box2Template">
+		<div class="pop-box-hd">
+	        <h3>领奖记录</h3>
+	        <div class="act">
+	            <a title="关闭" class="btn-close">×</a>
+	        </div>
+	    </div>
+	    <div class="pop-box-bd">
+	    	this is a pop-box template!!!-----222222
+	    	this is a pop-box template!!!-----222222
+	    	this is a pop-box template!!!-----222222
+	    	this is a pop-box template!!!-----222222
+	    </div>
+	</div>
+
+	<div class="pop-box" id="box3Template">
+		<div class="pop-box-hd">
+	        <h3>领奖记录</h3>
+	        <div class="act">
+	            <a title="关闭" class="btn-close">×</a>
+	        </div>
+	    </div>
+	    <div class="pop-box-bd">
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    	this is a pop-box template!!!------333333
+	    </div>
+	</div>
+
+	<script src="js/pop-box.js"></script>
+	<script>
+		$(function() {
+			//弹窗实例
+			var popBox = new PopBox();
+
+			$("#box1,#box2,#box3").click(function() {
+				var id = $(this).attr("id");
+				popBox.showPopup($("#"+id+"Template"));
+			});
+
+			// popBox.showPopup($("#templateBox"));
+
+			$("body").delegate(".btn-close", "click", function(e) {
+				e.preventDefault();
+				//注意这里的$(this).parents()方法，可以传入element,背后的原理是先找到所有的.pop-box,然后判断是否为this的parent
+				popBox.closePopup($(this).parents(".pop-box"));
+			});
+		});
+	</script>
+</body>
+</html>

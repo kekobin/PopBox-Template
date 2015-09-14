@@ -1,0 +1,58 @@
+/**遮罩层**/
+.pop-mask{
+	display:none;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000);
+    zoom: 1;
+    z-index: 100;
+}
+/**弹窗实体**/
+.pop-box{
+	display:none;
+	zoom: 1;
+    width: 430px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-top: 3px solid #408bcb;
+}
+.pop-box .pop-box-hd {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: none;
+    padding: 5px 15px;
+    overflow: hidden;
+}
+.pop-box-hd:before, .pop-box-hd:after, .pop-box-bd:before, .pop-box-bd:after{
+	content: "";
+    display: table;
+    line-height: 0;
+}
+.pop-box .pop-box-hd h3 {
+    float: left;
+    _display: inline;
+    margin: 0;
+    color: #666;
+    font-weight: bold;
+}
+.pop-box .pop-box-hd .act {
+    float: right;
+    _display: inline;
+}
+.pop-box .pop-box-hd .act .btn-close {
+    cursor: pointer;
+    color: #b0b0b0;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 5px;
+}
+.pop-box .pop-box-bd {
+    background: #fff;
+    color: #666;
+    overflow: auto;
+}
